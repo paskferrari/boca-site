@@ -283,7 +283,7 @@ export default function LaSquadra() {
             }}
           >
             {players.map((player, i) => (
-              <PlayerCard key={player.num} player={player} index={i} />
+              <PlayerCard key={player.num} player={player} />
             ))}
 
             {/* End card */}

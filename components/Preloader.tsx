@@ -43,7 +43,7 @@ export default function Preloader({ onComplete }: Props) {
           height: '2px',
           backgroundColor: '#F5C000',
           transformOrigin: 'left center',
-          scaleX: 0,
+          transform: 'scaleX(0)',
         }}
       />
 
