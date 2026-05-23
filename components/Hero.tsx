@@ -50,7 +50,7 @@ export default function Hero() {
         position: 'relative',
         height: '100dvh',
         minHeight: '640px',
-        backgroundColor: '#080808',
+        backgroundColor: '#070C18',
         display: 'flex',
         alignItems: 'flex-end',
         paddingTop: 'clamp(80px, 10vh, 140px)',
@@ -91,9 +91,9 @@ export default function Hero() {
         ))}
 
         {/* Overlays */}
-        <div style={{ position: 'absolute', inset: 0, background: 'rgba(8,8,8,0.28)' }} />
-        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, #080808 0%, rgba(8,8,8,0.85) 30%, rgba(8,8,8,0.2) 60%, transparent 100%)' }} />
-        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, rgba(8,8,8,0.9) 0%, rgba(8,8,8,0.5) 25%, transparent 55%)' }} />
+        <div style={{ position: 'absolute', inset: 0, background: 'rgba(7,12,24,0.28)' }} />
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, #070C18 0%, rgba(7,12,24,0.85) 30%, rgba(7,12,24,0.2) 60%, transparent 100%)' }} />
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, rgba(7,12,24,0.9) 0%, rgba(7,12,24,0.5) 25%, transparent 55%)' }} />
       </div>
 
       <style>{`
@@ -254,7 +254,7 @@ export default function Hero() {
           <span style={{ fontSize: '32px', lineHeight: 1, marginBottom: '4px' }}>★</span>
           <span
             className="font-bebas"
-            style={{ fontSize: '18px', color: '#080808', letterSpacing: '0.06em', lineHeight: 1.1 }}
+            style={{ fontSize: '18px', color: '#070C18', letterSpacing: '0.06em', lineHeight: 1.1 }}
           >
             CAMPIONI
           </span>

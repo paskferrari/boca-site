@@ -23,7 +23,7 @@ export default function CtaContatti() {
       id="contatti"
       ref={sectionRef}
       style={{
-        backgroundColor: '#080808',
+        backgroundColor: '#070C18',
         borderTop: '1px solid rgba(255,255,255,0.06)',
         overflow: 'hidden',
         position: 'relative',
@@ -122,7 +122,7 @@ export default function CtaContatti() {
               alignItems: 'center',
               gap: '10px',
               backgroundColor: '#F5C000',
-              color: '#080808',
+              color: '#070C18',
               padding: '16px 36px',
               fontSize: '13px',
               letterSpacing: '0.12em',

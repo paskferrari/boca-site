@@ -205,7 +205,7 @@ export default function LaSquadra() {
     <section
       id="squadra"
       style={{
-        backgroundColor: '#080808',
+        backgroundColor: '#070C18',
         borderTop: '1px solid rgba(255,255,255,0.06)',
       }}
     >

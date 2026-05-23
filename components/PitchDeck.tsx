@@ -135,7 +135,7 @@ function PackagesSection() {
               className="font-bebas"
               style={{
                 fontSize: 'clamp(40px, 4vw, 56px)',
-                color: pkg.gold ? '#080808' : '#FFFFFF',
+                color: pkg.gold ? '#070C18' : '#FFFFFF',
                 letterSpacing: '0.02em',
                 lineHeight: 1,
                 marginBottom: '8px',
@@ -178,7 +178,7 @@ function PackagesSection() {
                     fontFamily: 'var(--font-inter), Inter, sans-serif',
                   }}
                 >
-                  <span style={{ color: pkg.gold ? '#080808' : '#F5C000', flexShrink: 0, marginTop: '2px' }}>✓</span>
+                  <span style={{ color: pkg.gold ? '#070C18' : '#F5C000', flexShrink: 0, marginTop: '2px' }}>✓</span>
                   {perk}
                 </li>
               ))}
@@ -219,7 +219,7 @@ export default function PitchDeck() {
     <section
       id="sponsorizzaci"
       style={{
-        backgroundColor: '#080808',
+        backgroundColor: '#070C18',
         borderTop: '1px solid rgba(255,255,255,0.06)',
       }}
     >

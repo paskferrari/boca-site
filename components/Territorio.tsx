@@ -27,7 +27,7 @@ export default function Territorio() {
       id="territorio"
       ref={sectionRef}
       style={{
-        backgroundColor: '#0B0E1A',
+        backgroundColor: '#0C1228',
         borderTop: '1px solid rgba(255,255,255,0.06)',
         overflow: 'hidden',
       }}

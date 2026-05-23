@@ -86,7 +86,7 @@ export default function Storia() {
       style={{
         height: '100dvh',
         minHeight: '600px',
-        backgroundColor: '#080808',
+        backgroundColor: '#070C18',
         overflow: 'hidden',
         display: 'flex',
         alignItems: 'center',

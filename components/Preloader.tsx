@@ -36,7 +36,7 @@ export default function Preloader({ onComplete }: Props) {
       style={{
         position: 'fixed',
         inset: 0,
-        backgroundColor: '#080808',
+        backgroundColor: '#070C18',
         zIndex: 100000,
         display: 'flex',
         flexDirection: 'column',
