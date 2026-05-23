@@ -11,14 +11,23 @@ export default function Preloader({ onComplete }: Props) {
   const [scope, animate] = useAnimate()
 
   useEffect(() => {
+    let done = false
+    const finish = () => { if (!done) { done = true; onComplete() } }
+
+    // Guaranteed fallback: max 4s regardless of animation state
+    const fallback = setTimeout(finish, 4000)
+
     async function run() {
       await animate('#pre-line', { scaleX: [0, 1] }, { duration: 0.7, ease: [0.76, 0, 0.24, 1] })
       await animate('#pre-text', { opacity: [0, 1], y: [20, 0] }, { duration: 0.5, ease: [0.22, 1, 0.36, 1] })
       await new Promise(r => setTimeout(r, 600))
       await animate(scope.current, { opacity: 0 }, { duration: 0.4, ease: 'easeInOut' })
-      onComplete()
+      clearTimeout(fallback)
+      finish()
     }
     run()
+
+    return () => clearTimeout(fallback)
   }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
   return (

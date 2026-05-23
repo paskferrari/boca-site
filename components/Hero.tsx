@@ -49,32 +49,79 @@ export default function Hero() {
       style={{
         position: 'relative',
         height: '100dvh',
-        minHeight: '600px',
-        overflow: 'hidden',
+        minHeight: '640px',
         backgroundColor: '#080808',
         display: 'flex',
         alignItems: 'flex-end',
+        paddingTop: 'clamp(80px, 10vh, 140px)',
       }}
+      className="hero-section"
     >
-      {/* BG image */}
-      <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
-        <Image
-          src="/images/action1.jpg"
-          alt="BOCA in azione"
-          fill
-          priority
-          style={{ objectFit: 'cover', objectPosition: 'center 30%' }}
-        />
-        {/* Overlay gradiente */}
-        <div
-          style={{
-            position: 'absolute',
-            inset: 0,
-            background:
-              'linear-gradient(to top, #080808 0%, rgba(8,8,8,0.75) 40%, rgba(8,8,8,0.3) 100%)',
-          }}
-        />
+      {/* BG photo grid */}
+      <div style={{ position: 'absolute', inset: 0, zIndex: 0, display: 'flex', gap: '3px', overflow: 'hidden' }}>
+        {[
+          { imgs: ['/images/action1.jpg', '/images/gallery1.jpg', '/images/celebration.jpg'], dur: 28, dir: 'up' },
+          { imgs: ['/images/gallery2.jpg', '/images/locker.jpg', '/images/action2.jpg'], dur: 22, dir: 'down' },
+          { imgs: ['/images/hero.jpg', '/images/gallery3.jpg', '/images/team-run.jpg'], dur: 30, dir: 'up' },
+          { imgs: ['/images/gallery4.jpg', '/images/action1.jpg', '/images/gallery2.jpg'], dur: 24, dir: 'down' },
+        ].map((col, ci) => (
+          <div
+            key={ci}
+            style={{ flex: 1, overflow: 'hidden', position: 'relative' }}
+            className={`hero-col hero-col-${ci}`}
+          >
+            <div
+              className={`hero-track hero-track-${col.dir}`}
+              style={{ animationDuration: `${col.dur}s` }}
+            >
+              {[...col.imgs, ...col.imgs].map((src, i) => (
+                <div key={i} style={{ position: 'relative', width: '100%', height: '42vh', flexShrink: 0 }}>
+                  <Image
+                    src={src}
+                    alt=""
+                    fill
+                    sizes="25vw"
+                    priority={ci === 0 && i === 0}
+                    style={{ objectFit: 'cover' }}
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+
+        {/* Overlays */}
+        <div style={{ position: 'absolute', inset: 0, background: 'rgba(8,8,8,0.28)' }} />
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, #080808 0%, rgba(8,8,8,0.85) 30%, rgba(8,8,8,0.2) 60%, transparent 100%)' }} />
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, rgba(8,8,8,0.9) 0%, rgba(8,8,8,0.5) 25%, transparent 55%)' }} />
       </div>
+
+      <style>{`
+        .hero-track {
+          display: flex;
+          flex-direction: column;
+          gap: 3px;
+          will-change: transform;
+        }
+        .hero-track-up {
+          animation: heroScrollUp linear infinite;
+        }
+        .hero-track-down {
+          animation: heroScrollDown linear infinite;
+        }
+        @keyframes heroScrollUp {
+          from { transform: translateY(0); }
+          to { transform: translateY(-50%); }
+        }
+        @keyframes heroScrollDown {
+          from { transform: translateY(-50%); }
+          to { transform: translateY(0); }
+        }
+        @media (max-width: 768px) {
+          .hero-col-2, .hero-col-3 { display: none; }
+          .hero-section { height: 85dvh !important; padding-top: clamp(40px, 6vh, 80px) !important; }
+        }
+      `}</style>
 
       {/* Contenuto */}
       <div

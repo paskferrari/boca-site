@@ -4,9 +4,9 @@ import { useState } from 'react'
 import Preloader from '@/components/Preloader'
 import Hero from '@/components/Hero'
 import Storia from '@/components/Storia'
-import Territorio from '@/components/Territorio'
 import LaSquadra from '@/components/LaSquadra'
 import PitchDeck from '@/components/PitchDeck'
+import Instagram from '@/components/Instagram'
 import CtaContatti from '@/components/CtaContatti'
 
 export default function Home() {
@@ -20,9 +20,9 @@ export default function Home() {
         <main>
           <Hero />
           <Storia />
-          <Territorio />
           <LaSquadra />
           <PitchDeck />
+          <Instagram />
           <CtaContatti />
         </main>
       )}
